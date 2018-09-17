@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component }  from 'react'
 import Markdown from 'react-markdown'
 
-class ProductComponent extends React.Component {
+class ProductComponent extends Component {
   render() {
     const data = this.props.data;
     const allReviews = data.allReview ? data.allReview.edges : []
@@ -14,7 +14,7 @@ class ProductComponent extends React.Component {
       if (allReviews.length) {
         reviewBox = allReviews.map((node) => {
           return (
-            <article>
+            <article key={node.node.id}>
               <p>Author: {node.node.author}</p>
               <p>{node.node.review}</p>
               <p>{node.node.rating}</p>

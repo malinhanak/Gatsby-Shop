@@ -18,16 +18,8 @@
            edges {
              node {
                id
-               name
-               description
-               category
-               price
-               stock
                slug
-               personality
-               img {
-                 url
-               }
+               categorySlug
              }
            }
          }
@@ -38,11 +30,19 @@
          console.log(result.errors)
        }
        result.data.allProduct.edges.map(({ node }) => {
+         console.log('noooode', node)
          createPage({
-           path: `/product/${node.slug}`,
+           path: `/${node.slug}`,
            component: path.resolve(`./src/templates/product.js`),
            context: {
              slug: node.slug
+           }
+         })
+         createPage({
+           path: `/${node.categorySlug}`,
+           component: path.resolve(`./src/templates/category.js`),
+           context: {
+             slug: node.categorySlug
            }
          })
        })

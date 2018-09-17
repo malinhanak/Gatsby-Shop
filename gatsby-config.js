@@ -27,6 +27,7 @@ module.exports = {
               img {
                 url
               }
+              categorySlug
             }
           allReview: reviews {
             id

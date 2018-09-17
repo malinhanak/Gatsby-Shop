@@ -1,9 +1,10 @@
 import React from "react";
 
-const ShopContent = ({ children }) => (
+const FlexRow = ({ children }) => (
   <div style={{
+    width:"100%",
     display:"flex",
     flexDirection: "row",
   }}>{children}</div>
 );
-export default ShopContent;
+export default FlexRow;
