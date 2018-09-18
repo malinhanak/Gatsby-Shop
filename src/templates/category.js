@@ -1,7 +1,6 @@
 import React, { Component }  from 'react'
 import Markdown from 'react-markdown'
 import ProductList from '../pages/listing'
-import CategoryList from '../pages/categories'
 
 class CategoryComponent extends Component {
   render() {
@@ -10,7 +9,6 @@ class CategoryComponent extends Component {
 
       return (
         <div>
-          <CategoryList data={data}></CategoryList>
           <ProductList data={data}></ProductList>
         </div>
       )

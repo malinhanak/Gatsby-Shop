@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import ProductListStyle from '../components/product-listing'
 import ProductContainer from '../components/product-container'
 import FlexRow from '../components/flex-row'
+import NavComponent from '../components/nav-component'
 import CategoryList from './categories'
 
 class Products extends Component {
@@ -24,13 +25,14 @@ class Products extends Component {
   }
 }
 
+
 class ProductList extends Component {
   render() {
     const data = this.props.data;
+    console.log('Data @ ProductList', data)
     const li = data.allProduct.edges.map((node) => {
       return <Products key={node.node.id} product={node.node}/>
     })
-
     return (
       <div>
         <h1>View Products</h1>
